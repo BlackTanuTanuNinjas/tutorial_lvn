@@ -2,10 +2,18 @@ defmodule TutorialLvnWeb.Router do
   use TutorialLvnWeb, :router
 
   pipeline :browser do
-    plug :accepts, ["html"]
+    plug :accepts, [
+      "html",
+      "swiftui"
+    ]
+
     plug :fetch_session
     plug :fetch_live_flash
-    plug :put_root_layout, html: {TutorialLvnWeb.Layouts, :root}
+
+    plug :put_root_layout,
+      html: {TutorialLvnWeb.Layouts, :root},
+      swiftui: {TutorialLvnWeb.Layouts.SwiftUI, :root}
+
     plug :protect_from_forgery
     plug :put_secure_browser_headers
   end
