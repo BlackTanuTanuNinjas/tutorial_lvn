@@ -11,8 +11,8 @@ struct ContentView: View {
     var body: some View {
         #LiveView(
             .automatic(
-                development: .localhost(path: "/"),
-                production: URL(string: "https://example.com")!
+                development: URL(string: "https://bea9-125-13-7-104.ngrok-free.app")!,
+                production: URL(string: "https://bea9-125-13-7-104.ngrok-free.app")!
             ),
             addons: [
                .liveForm
